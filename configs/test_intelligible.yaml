@@ -1,0 +1,94 @@
+testname: Speech Intelligibility Test
+testId: Test_Intelligible_1
+bufferSize: 2048
+stopOnErrors: true
+showButtonPreviousPage: true
+remoteService: service/write.php
+
+
+pages:
+
+    - type: generic
+      id: title_page
+      name: Speech Intelligibility Test
+      content: The next few screens will ask you to grade several audio clips, based on how clearly you can hear the speech present in those clips.
+    - type: volume
+      id: vol_page
+      name: Volume Adjustment
+      content: Please set the volume to a comfortable level. For consistency, this volume level should not be altered once the test has begun. 
+      stimulus: configs/resources/audio/mono_c1.wav
+      defaultVolume: 0.5
+    # - type: generic
+    #   id: training_1
+    #   name: Training No.1
+    #   content: Please listen to each of the music excerpts:<br/><audio controls><source src='configs/resources/audio/mono_c1.wav' type='audio/wav'></audio><br/><audio controls><source src='configs/resources/audio/mono_c2.wav' type='audio/wav'></audio><br/><audio controls><source src='configs/resources/audio/mono_c3.wav' type='audio/wav'></audio><br/>
+    # - type: likert_multi_stimulus
+    #   id: training_2
+    #   name: Training No.2
+    #   content: test description
+    #   mustRate: true
+    #   stimuli:
+    #       C1: configs/resources/audio/0dB/Reverb/p279_393_1_17M_RVRB.wav
+    #       C2: configs/resources/audio/mono_c2.wav
+    #       C3: configs/resources/audio/mono_c3.wav
+    #   response:
+    #     - value: listened
+    #       label: I listened to this item
+    - type: mushra
+      id: test_1
+      name: Test Number 1
+      content: Please listen to the reference. Then, grade each of the stimuli below by assessing how they compare to the reference.  
+      showWaveform: true
+      enableLooping: true 
+      reference: configs/resources/audio/m3dB/Anechoic/p278_082_0_-3dB.wav
+      createAnchor35: true
+      createAnchor70: true
+      randomize: true
+      showConditionNames: false
+      stimuli:
+          17M: configs/resources/audio/m3dB/Anechoic/p278_082_0_17M.wav
+          PL_SISNR: configs\resources\audio\m3dB\Anechoic\p278_082_0_PL_SISNR.wav
+          SNR: configs/resources/audio/m3dB/Anechoic/p278_082_0_SNR.wav   
+    - type: mushra
+      id: test_2
+      name: Test Number 2
+      content: Please listen to the reference. Then, grade each of the stimuli below by assessing how they compare to the reference. 
+      showWaveform: true
+      enableLooping: true 
+      reference: configs/resources/audio/mono_ref.wav
+      createAnchor35: true
+      createAnchor70: true
+      randomize: true
+      showConditionNames: true
+      stimuli:
+          C1: configs/resources/audio/mono_c1.wav
+          C2: configs/resources/audio/mono_c2.wav
+          C3: configs/resources/audio/mono_c3.wav  
+    - type: mushra
+      id: test_3
+      name: Test Number 3
+      content: Please listen to the reference. Then, grade each of the stimuli below by assessing how they compare to the reference.
+      showWaveform: true
+      enableLooping: true 
+      reference: configs/resources/audio/mono_ref.wav
+      createAnchor35: true
+      createAnchor70: true
+      randomize: true
+      showConditionNames: true
+      stimuli:
+          C1: configs/resources/audio/mono_c1.wav
+          C2: configs/resources/audio/mono_c2.wav
+          C3: configs/resources/audio/mono_c3.wav  
+
+
+
+
+    - type: finish
+      name: Finish
+      content: This is the end of the test. Please fill out your name below.
+      showResults: false
+      writeResults: true
+      questionnaire:
+          - type: text
+            label: Name
+            name: Name
