@@ -1,6 +1,7 @@
 testname: Speech Intelligibility Test
 testId: Test_Intelligible_1
-bufferSize: 2048
+#bufferSize: 2048
+bufferSize: 512
 stopOnErrors: true
 showButtonPreviousPage: true
 remoteService: service/write.php
@@ -15,73 +16,283 @@ pages:
     - type: volume
       id: vol_page
       name: Volume Adjustment
-      content: Please set the volume to a comfortable level. For consistency, this volume level should not be altered once the test has begun. 
+      content: Please set the volume so that the sample plays loud and clear. For consistency, this volume level should not be altered once the test has begun. 
       stimulus: configs/resources/audio/mono_c1.wav
       defaultVolume: 0.5
-    # - type: generic
-    #   id: training_1
-    #   name: Training No.1
-    #   content: Please listen to each of the music excerpts:<br/><audio controls><source src='configs/resources/audio/mono_c1.wav' type='audio/wav'></audio><br/><audio controls><source src='configs/resources/audio/mono_c2.wav' type='audio/wav'></audio><br/><audio controls><source src='configs/resources/audio/mono_c3.wav' type='audio/wav'></audio><br/>
-    # - type: likert_multi_stimulus
-    #   id: training_2
-    #   name: Training No.2
-    #   content: test description
-    #   mustRate: true
-    #   stimuli:
-    #       C1: configs/resources/audio/0dB/Reverb/p279_393_1_17M_RVRB.wav
-    #       C2: configs/resources/audio/mono_c2.wav
-    #       C3: configs/resources/audio/mono_c3.wav
-    #   response:
-    #     - value: listened
-    #       label: I listened to this item
-    - type: mushra
-      id: test_1
-      name: Test Number 1
-      content: Please listen to the reference. Then, grade each of the stimuli below by assessing how they compare to the reference.  
-      showWaveform: true
-      enableLooping: true 
-      reference: configs/resources/audio/m3dB/Anechoic/p278_082_0_-3dB.wav
-      createAnchor35: true
-      createAnchor70: true
-      randomize: true
-      showConditionNames: false
-      stimuli:
-          17M: configs/resources/audio/m3dB/Anechoic/p278_082_0_17M.wav
-          PL_SISNR: configs\resources\audio\m3dB\Anechoic\p278_082_0_PL_SISNR.wav
-          SNR: configs/resources/audio/m3dB/Anechoic/p278_082_0_SNR.wav   
-    - type: mushra
-      id: test_2
-      name: Test Number 2
-      content: Please listen to the reference. Then, grade each of the stimuli below by assessing how they compare to the reference. 
-      showWaveform: true
-      enableLooping: true 
-      reference: configs/resources/audio/mono_ref.wav
-      createAnchor35: true
-      createAnchor70: true
-      randomize: true
-      showConditionNames: true
-      stimuli:
-          C1: configs/resources/audio/mono_c1.wav
-          C2: configs/resources/audio/mono_c2.wav
-          C3: configs/resources/audio/mono_c3.wav  
-    - type: mushra
-      id: test_3
-      name: Test Number 3
-      content: Please listen to the reference. Then, grade each of the stimuli below by assessing how they compare to the reference.
-      showWaveform: true
-      enableLooping: true 
-      reference: configs/resources/audio/mono_ref.wav
-      createAnchor35: true
-      createAnchor70: true
-      randomize: true
-      showConditionNames: true
-      stimuli:
-          C1: configs/resources/audio/mono_c1.wav
-          C2: configs/resources/audio/mono_c2.wav
-          C3: configs/resources/audio/mono_c3.wav  
-
-
-
+    -
+      - random   
+      -    
+        - type: mushra
+          id: test_m3db_anechoic
+          name: Listening Test
+          content: Please listen to the reference. Then, grade each of the stimuli below by assessing how they compare to the reference. 
+          showWaveform: true
+          enableLooping: true 
+          reference: configs/resources/audio/m3dB/Anechoic/p278_057_1.wav
+          createAnchor35: true
+          createAnchor70: true
+          randomize: true
+          showConditionNames: false
+          stimuli:
+              PL_SISNR: configs/resources/audio/m3dB/Anechoic/p278_057_1_PL_SISNR_40E.wav
+              SNR: configs/resources/audio/m3dB/Anechoic/p278_057_1_SNR.wav
+              BiTasNet: configs/resources/audio/m3dB/Anechoic/p278_057_1_17M.wav  
+              BSOBM: configs/resources/audio/m3dB/Anechoic/p278_057_1_-3dB_BSOBM.wav 
+      -
+        - type: mushra
+          id: test_m3db_reverb
+          name: Listening Test
+          content: Please listen to the reference. Then, grade each of the stimuli below by assessing how they compare to the reference. 
+          showWaveform: true
+          enableLooping: true 
+          reference: configs/resources/audio/m3dB/Reverb/p278_154_0_rb.wav
+          createAnchor35: true
+          createAnchor70: true
+          randomize: true
+          showConditionNames: false
+          stimuli: 
+              PL_SISNR: configs/resources/audio/m3dB/Reverb/p278_154_0_PL_SISNR_RVRB.wav
+              SNR: configs/resources/audio/m3dB/Reverb/p278_154_0_SNR_RVRB.wav
+              BiTasNet: configs/resources/audio/m3dB/Reverb/p278_154_0_17M_RVRB.wav  
+              BSOBM: configs/resources/audio/m3dB/Reverb/p278_154_0_rb_BSOBM.wav
+      -
+        - type: mushra
+          id: test_m6db_anechoic
+          name: Listening Test
+          content: Please listen to the reference. Then, grade each of the stimuli below by assessing how they compare to the reference. 
+          showWaveform: true
+          enableLooping: true 
+          reference: configs/resources/audio/m6dB/Anechoic/p279_049_1_-6dB.wav
+          createAnchor35: true
+          createAnchor70: true
+          randomize: true
+          showConditionNames: false
+          stimuli: 
+              PL_SISNR: configs/resources/audio/m6dB/Anechoic/p279_049_1_PL_SISNR_40E.wav
+              SNR: configs/resources/audio/m6dB/Anechoic/p279_049_1_SNR.wav
+              BiTasNet: configs/resources/audio/m6dB/Anechoic/p279_049_1_17M.wav
+              BSOBM: configs/resources/audio/m6dB/Anechoic/p279_049_1_-6dB_BSOBM.wav
+      -
+        - type: mushra
+          id: test_m6db_reverb
+          name: Listening Test
+          content: Please listen to the reference. Then, grade each of the stimuli below by assessing how they compare to the reference. 
+          showWaveform: true
+          enableLooping: true 
+          reference: configs/resources/audio/m6dB/Reverb/p278_358_0_rb.wav
+          createAnchor35: true
+          createAnchor70: true
+          randomize: true
+          showConditionNames: false
+          stimuli: 
+              PL_SISNR: configs/resources/audio/m6dB/Reverb/p278_358_0_PL_SISNR_RVRB.wav
+              SNR: configs/resources/audio/m6dB/Reverb/p278_358_0_SNR_RVRB.wav
+              BiTasNet: configs/resources/audio/m6dB/Reverb/p278_358_0_17M_RVRB.wav
+              BSOBM: configs/resources/audio/m6dB/Reverb/p278_358_0_rb_BSOBM.wav
+      -
+        - type: mushra
+          id: test_0db_anechoic
+          name: Listening Test
+          content: Please listen to the reference. Then, grade each of the stimuli below by assessing how they compare to the reference. 
+          showWaveform: true
+          enableLooping: true 
+          reference: configs/resources/audio/0dB/Anechoic/p282_009_1_0dB.wav
+          createAnchor35: true
+          createAnchor70: true
+          randomize: true
+          showConditionNames: false
+          stimuli: 
+              PL_SISNR: configs/resources/audio/0dB/Anechoic/p282_009_1_PL_SISNR_40E.wav
+              SNR: configs/resources/audio/0dB/Anechoic/p282_009_1_SNR.wav
+              BiTasNet: configs/resources/audio/0dB/Anechoic/p282_009_1_17M.wav
+              BSOBM: configs/resources/audio/0dB/Anechoic/p282_009_1_0dB_BSOBM.wav
+      -
+        - type: mushra
+          id: test_0db_reverb
+          name: Listening Test
+          content: Please listen to the reference. Then, grade each of the stimuli below by assessing how they compare to the reference. 
+          showWaveform: true
+          enableLooping: true 
+          reference: configs/resources/audio/0dB/Reverb/p279_271_0_rb.wav
+          createAnchor35: true
+          createAnchor70: true
+          randomize: true
+          showConditionNames: false
+          stimuli: 
+              PL_SISNR: configs/resources/audio/0dB/Reverb/p279_271_0_PL_SISNR_RVRB.wav
+              SNR: configs/resources/audio/0dB/Reverb/p279_271_0_SNR_RVRB.wav
+              BiTasNet: configs/resources/audio/0dB/Reverb/p279_271_0_17M_RVRB.wav
+              BSOBM: configs/resources/audio/0dB/Reverb/p279_271_0_rb_BSOBM.wav
+      -
+        - type: mushra
+          id: test_3db_anechoic
+          name: Listening Test
+          content: Please listen to the reference. Then, grade each of the stimuli below by assessing how they compare to the reference. 
+          showWaveform: true
+          enableLooping: true 
+          reference: configs/resources/audio/3dB/Anechoic/p282_164_1_3dB.wav
+          createAnchor35: true
+          createAnchor70: true
+          randomize: true
+          showConditionNames: false
+          stimuli: 
+              PL_SISNR: configs/resources/audio/3dB/Anechoic/p282_164_1_PL_SISNR_40E.wav
+              SNR: configs/resources/audio/3dB/Anechoic/p282_164_1_SNR.wav
+              BiTasNet: configs/resources/audio/3dB/Anechoic/p282_164_1_17M.wav
+              BSOBM: configs/resources/audio/3dB/Anechoic/p282_164_1_3dB_BSOBM.wav
+      -
+        - type: mushra
+          id: test_3db_reverb
+          name: Listening Test
+          content: Please listen to the reference. Then, grade each of the stimuli below by assessing how they compare to the reference. 
+          showWaveform: true
+          enableLooping: true 
+          reference: configs/resources/audio/3dB/Reverb/p282_285_0_rb.wav
+          createAnchor35: true
+          createAnchor70: true
+          randomize: true
+          showConditionNames: false
+          stimuli: 
+              PL_SISNR: configs/resources/audio/3dB/Reverb/p282_285_0_PL_SISNR_RVRB.wav
+              SNR: configs/resources/audio/3dB/Reverb/p282_285_0_SNR_RVRB.wav
+              BiTasNet: configs/resources/audio/3dB/Reverb/p282_285_0_17M_RVRB.wav
+              BSOBM: configs/resources/audio/3dB/Reverb/p282_285_0_rb_BSOBM.wav
+      -
+        - type: mushra
+          id: test_6db_anechoic
+          name: Listening Test
+          content: Please listen to the reference. Then, grade each of the stimuli below by assessing how they compare to the reference. 
+          showWaveform: true
+          enableLooping: true 
+          reference: configs/resources/audio/6dB/Anechoic/p286_101_1_6dB.wav
+          createAnchor35: true
+          createAnchor70: true
+          randomize: true
+          showConditionNames: false
+          stimuli: 
+              PL_SISNR: configs/resources/audio/6dB/Anechoic/p286_101_1_PL_SISNR_40E.wav
+              SNR: configs/resources/audio/6dB/Anechoic/p286_101_1_SNR.wav
+              BiTasNet: configs/resources/audio/6dB/Anechoic/p286_101_1_17M.wav
+              BSOBM: configs/resources/audio/6dB/Anechoic/p286_101_1_6dB_BSOBM.wav
+      -
+        - type: mushra
+          id: test_6db_reverb
+          name: Listening Test
+          content: Please listen to the reference. Then, grade each of the stimuli below by assessing how they compare to the reference. 
+          showWaveform: true
+          enableLooping: true 
+          reference: configs/resources/audio/6dB/Reverb/p282_330_0_rb.wav
+          createAnchor35: true
+          createAnchor70: true
+          randomize: true
+          showConditionNames: false
+          stimuli: 
+              PL_SISNR: configs/resources/audio/6dB/Reverb/p282_330_0_PL_SISNR_RVRB.wav
+              SNR: configs/resources/audio/6dB/Reverb/p282_330_0_SNR_RVRB.wav
+              BiTasNet: configs/resources/audio/6dB/Reverb/p282_330_0_17M_RVRB.wav
+              BSOBM: configs/resources/audio/6dB/Reverb/p282_330_0_rb_BSOBM.wav
+      -
+        - type: mushra
+          id: test_9db_anechoic
+          name: Listening Test
+          content: Please listen to the reference. Then, grade each of the stimuli below by assessing how they compare to the reference. 
+          showWaveform: true
+          enableLooping: true 
+          reference: configs/resources/audio/9dB/Anechoic/p286_235_1_9dB.wav
+          createAnchor35: true
+          createAnchor70: true
+          randomize: true
+          showConditionNames: false
+          stimuli: 
+              PL_SISNR: configs/resources/audio/9dB/Anechoic/p286_235_1_PL_SISNR_40E.wav
+              SNR: configs/resources/audio/9dB/Anechoic/p286_235_1_SNR.wav
+              BiTasNet: configs/resources/audio/9dB/Anechoic/p286_235_1_17M.wav
+              BSOBM: configs/resources/audio/9dB/Anechoic/p286_235_1_9dB_BSOBM.wav
+      -
+        - type: mushra
+          id: test_9db_reverb
+          name: Listening Test
+          content: Please listen to the reference. Then, grade each of the stimuli below by assessing how they compare to the reference. 
+          showWaveform: true
+          enableLooping: true 
+          reference: configs/resources/audio/9dB/Reverb/p286_373_1_rb.wav
+          createAnchor35: true
+          createAnchor70: true
+          randomize: true
+          showConditionNames: false
+          stimuli: 
+              PL_SISNR: configs/resources/audio/9dB/Reverb/p286_373_1_PL_SISNR_RVRB.wav
+              SNR: configs/resources/audio/9dB/Reverb/p286_373_1_SNR_RVRB.wav
+              BiTasNet: configs/resources/audio/9dB/Reverb/p286_373_1_17M_RVRB.wav
+              BSOBM: configs/resources/audio/9dB/Reverb/p286_373_1_rb_BSOBM.wav
+      -
+        - type: mushra
+          id: test_12db_anechoic
+          name: Listening Test
+          content: Please listen to the reference. Then, grade each of the stimuli below by assessing how they compare to the reference. 
+          showWaveform: true
+          enableLooping: true 
+          reference: configs/resources/audio/12dB/Anechoic/p287_151_1_12dB.wav
+          createAnchor35: true
+          createAnchor70: true
+          randomize: true
+          showConditionNames: false
+          stimuli: 
+              PL_SISNR: configs/resources/audio/12dB/Anechoic/p287_151_1_PL_SISNR_40E.wav
+              SNR: configs/resources/audio/12dB/Anechoic/p287_151_1_SNR.wav
+              BiTasNet: configs/resources/audio/12dB/Anechoic/p287_151_1_17M.wav
+              BSOBM: configs/resources/audio/12dB/Anechoic/p287_151_1_12dB_BSOBM.wav
+      -
+        - type: mushra
+          id: test_12db_reverb
+          name: Listening Test
+          content: Please listen to the reference. Then, grade each of the stimuli below by assessing how they compare to the reference. 
+          showWaveform: true
+          enableLooping: true 
+          reference: configs/resources/audio/12dB/Reverb/p286_389_0_rb.wav
+          createAnchor35: true
+          createAnchor70: true
+          randomize: true
+          showConditionNames: false
+          stimuli: 
+              PL_SISNR: configs/resources/audio/12dB/Reverb/p286_389_0_PL_SISNR_RVRB.wav
+              SNR: configs/resources/audio/12dB/Reverb/p286_389_0_SNR_RVRB.wav
+              BiTasNet: configs/resources/audio/12dB/Reverb/p286_389_0_rb_BSOBM.wav
+              BSOBM: configs/resources/audio/12dB/Reverb/p286_389_0_17M_RVRB.wav
+      -
+        - type: mushra
+          id: test_15db_anechoic
+          name: Listening Test
+          content: Please listen to the reference. Then, grade each of the stimuli below by assessing how they compare to the reference. 
+          showWaveform: true
+          enableLooping: true 
+          reference: configs/resources/audio/15dB/Anechoic/sp16_0_15dB.wav
+          createAnchor35: true
+          createAnchor70: true
+          randomize: true
+          showConditionNames: false
+          stimuli: 
+              PL_SISNR: configs/resources/audio/15dB/Anechoic/sp16_0_PL_SISNR_40E.wav
+              SNR: configs/resources/audio/15dB/Anechoic/sp16_0_SNR.wav
+              BiTasNet: configs/resources/audio/15dB/Anechoic/sp16_0_17M.wav
+              BSOBM: configs/resources/audio/15dB/Anechoic/sp16_0_15dB_BSOBM.wav
+      -
+        - type: mushra
+          id: test_15db_reverb
+          name: Listening Test
+          content: Please listen to the reference. Then, grade each of the stimuli below by assessing how they compare to the reference. 
+          showWaveform: true
+          enableLooping: true 
+          reference: configs/resources/audio/15dB/Reverb/p287_180_0_rb.wav
+          createAnchor35: true
+          createAnchor70: true
+          randomize: true
+          showConditionNames: false
+          stimuli: 
+              PL_SISNR: configs/resources/audio/15dB/Reverb/p287_180_0_PL_SISNR_RVRB.wav
+              SNR: configs/resources/audio/15dB/Reverb/p287_180_0_SNR_RVRB.wav
+              BiTasNet: configs/resources/audio/15dB/Reverb/p287_180_0_17M_RVRB.wav
+              BSOBM: configs/resources/audio/15dB/Reverb/p287_180_0_rb_BSOBM.wav
 
     - type: finish
       name: Finish
@@ -92,3 +303,4 @@ pages:
           - type: text
             label: Name
             name: Name
+#configs/resources/audio/m3dB/Anechoic/p278_082_0_SNR.wav  
