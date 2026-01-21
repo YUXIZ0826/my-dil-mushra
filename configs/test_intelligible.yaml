@@ -13,24 +13,24 @@ pages:
       id: title_page
       name: Speech Intelligibility Test
       content: The next few screens will ask you to grade several audio clips, based on how clearly you can hear the speech present in those clips.
-    - type: volume
-      id: vol_page
-      name: Volume Adjustment
-      content: Please set the volume so that the sample plays loud and clear. For consistency, this volume level should not be altered once the test has begun. 
-      stimulus: configs/resources/audio/mono_c1.wav
-      defaultVolume: 0.5
+    # - type: volume
+    #   id: vol_page
+    #   name: Volume Adjustment
+    #   content: Please set the volume so that the sample plays loud and clear. For consistency, this volume level should not be altered once the test has begun. 
+    #   stimulus: configs/resources/audio/mono_c1.wav
+    #   defaultVolume: 0.5
     -
       - random   
       -    
         - type: mushra
           id: test_m3db_anechoic
           name: Listening Test
-          content: Please listen to the reference. Then, grade each of the stimuli below by assessing how they compare to the reference. 
+          content: Please listen to the reference. Then, grade each of the stimuli below by comparing how clearly the speech can be heard.
           showWaveform: true
           enableLooping: true 
           reference: configs/resources/audio/m3dB/Anechoic/p278_057_1.wav
           createAnchor35: true
-          createAnchor70: true
+          createAnchor70: false
           randomize: true
           showConditionNames: false
           stimuli:
@@ -42,12 +42,12 @@ pages:
         - type: mushra
           id: test_m3db_reverb
           name: Listening Test
-          content: Please listen to the reference. Then, grade each of the stimuli below by assessing how they compare to the reference. 
+          content: Please listen to the reference. Then, grade each of the stimuli below by comparing how clearly the speech can be heard.
           showWaveform: true
           enableLooping: true 
           reference: configs/resources/audio/m3dB/Reverb/p278_154_0_rb.wav
           createAnchor35: true
-          createAnchor70: true
+          createAnchor70: false
           randomize: true
           showConditionNames: false
           stimuli: 
@@ -59,12 +59,12 @@ pages:
         - type: mushra
           id: test_m6db_anechoic
           name: Listening Test
-          content: Please listen to the reference. Then, grade each of the stimuli below by assessing how they compare to the reference. 
+          content: Please listen to the reference. Then, grade each of the stimuli below by comparing how clearly the speech can be heard.
           showWaveform: true
           enableLooping: true 
           reference: configs/resources/audio/m6dB/Anechoic/p279_049_1_-6dB.wav
           createAnchor35: true
-          createAnchor70: true
+          createAnchor70: false
           randomize: true
           showConditionNames: false
           stimuli: 
@@ -76,12 +76,12 @@ pages:
         - type: mushra
           id: test_m6db_reverb
           name: Listening Test
-          content: Please listen to the reference. Then, grade each of the stimuli below by assessing how they compare to the reference. 
+          content: Please listen to the reference. Then, grade each of the stimuli below by comparing how clearly the speech can be heard.
           showWaveform: true
           enableLooping: true 
           reference: configs/resources/audio/m6dB/Reverb/p278_358_0_rb.wav
           createAnchor35: true
-          createAnchor70: true
+          createAnchor70: false
           randomize: true
           showConditionNames: false
           stimuli: 
@@ -93,12 +93,12 @@ pages:
         - type: mushra
           id: test_0db_anechoic
           name: Listening Test
-          content: Please listen to the reference. Then, grade each of the stimuli below by assessing how they compare to the reference. 
+          content: Please listen to the reference. Then, grade each of the stimuli below by comparing how clearly the speech can be heard.
           showWaveform: true
           enableLooping: true 
           reference: configs/resources/audio/0dB/Anechoic/p282_009_1_0dB.wav
           createAnchor35: true
-          createAnchor70: true
+          createAnchor70: false
           randomize: true
           showConditionNames: false
           stimuli: 
@@ -110,12 +110,12 @@ pages:
         - type: mushra
           id: test_0db_reverb
           name: Listening Test
-          content: Please listen to the reference. Then, grade each of the stimuli below by assessing how they compare to the reference. 
+          content: Please listen to the reference. Then, grade each of the stimuli below by comparing how clearly the speech can be heard.
           showWaveform: true
           enableLooping: true 
           reference: configs/resources/audio/0dB/Reverb/p279_271_0_rb.wav
           createAnchor35: true
-          createAnchor70: true
+          createAnchor70: false
           randomize: true
           showConditionNames: false
           stimuli: 
@@ -127,12 +127,12 @@ pages:
         - type: mushra
           id: test_3db_anechoic
           name: Listening Test
-          content: Please listen to the reference. Then, grade each of the stimuli below by assessing how they compare to the reference. 
+          content: Please listen to the reference. Then, grade each of the stimuli below by comparing how clearly the speech can be heard.
           showWaveform: true
           enableLooping: true 
           reference: configs/resources/audio/3dB/Anechoic/p282_164_1_3dB.wav
           createAnchor35: true
-          createAnchor70: true
+          createAnchor70: false
           randomize: true
           showConditionNames: false
           stimuli: 
@@ -144,12 +144,12 @@ pages:
         - type: mushra
           id: test_3db_reverb
           name: Listening Test
-          content: Please listen to the reference. Then, grade each of the stimuli below by assessing how they compare to the reference. 
+          content: Please listen to the reference. Then, grade each of the stimuli below by comparing how clearly the speech can be heard.
           showWaveform: true
           enableLooping: true 
           reference: configs/resources/audio/3dB/Reverb/p282_285_0_rb.wav
           createAnchor35: true
-          createAnchor70: true
+          createAnchor70: false
           randomize: true
           showConditionNames: false
           stimuli: 
@@ -161,12 +161,12 @@ pages:
         - type: mushra
           id: test_6db_anechoic
           name: Listening Test
-          content: Please listen to the reference. Then, grade each of the stimuli below by assessing how they compare to the reference. 
+          content: Please listen to the reference. Then, grade each of the stimuli below by comparing how clearly the speech can be heard.
           showWaveform: true
           enableLooping: true 
           reference: configs/resources/audio/6dB/Anechoic/p286_101_1_6dB.wav
           createAnchor35: true
-          createAnchor70: true
+          createAnchor70: false
           randomize: true
           showConditionNames: false
           stimuli: 
@@ -178,12 +178,12 @@ pages:
         - type: mushra
           id: test_6db_reverb
           name: Listening Test
-          content: Please listen to the reference. Then, grade each of the stimuli below by assessing how they compare to the reference. 
+          content: Please listen to the reference. Then, grade each of the stimuli below by comparing how clearly the speech can be heard.
           showWaveform: true
           enableLooping: true 
           reference: configs/resources/audio/6dB/Reverb/p282_330_0_rb.wav
           createAnchor35: true
-          createAnchor70: true
+          createAnchor70: false
           randomize: true
           showConditionNames: false
           stimuli: 
@@ -195,12 +195,12 @@ pages:
         - type: mushra
           id: test_9db_anechoic
           name: Listening Test
-          content: Please listen to the reference. Then, grade each of the stimuli below by assessing how they compare to the reference. 
+          content: Please listen to the reference. Then, grade each of the stimuli below by comparing how clearly the speech can be heard.
           showWaveform: true
           enableLooping: true 
           reference: configs/resources/audio/9dB/Anechoic/p286_235_1_9dB.wav
           createAnchor35: true
-          createAnchor70: true
+          createAnchor70: false
           randomize: true
           showConditionNames: false
           stimuli: 
@@ -212,12 +212,12 @@ pages:
         - type: mushra
           id: test_9db_reverb
           name: Listening Test
-          content: Please listen to the reference. Then, grade each of the stimuli below by assessing how they compare to the reference. 
+          content: Please listen to the reference. Then, grade each of the stimuli below by comparing how clearly the speech can be heard.
           showWaveform: true
           enableLooping: true 
           reference: configs/resources/audio/9dB/Reverb/p286_373_1_rb.wav
           createAnchor35: true
-          createAnchor70: true
+          createAnchor70: false
           randomize: true
           showConditionNames: false
           stimuli: 
@@ -229,12 +229,12 @@ pages:
         - type: mushra
           id: test_12db_anechoic
           name: Listening Test
-          content: Please listen to the reference. Then, grade each of the stimuli below by assessing how they compare to the reference. 
+          content: Please listen to the reference. Then, grade each of the stimuli below by comparing how clearly the speech can be heard.
           showWaveform: true
           enableLooping: true 
           reference: configs/resources/audio/12dB/Anechoic/p287_151_1_12dB.wav
           createAnchor35: true
-          createAnchor70: true
+          createAnchor70: false
           randomize: true
           showConditionNames: false
           stimuli: 
@@ -246,12 +246,12 @@ pages:
         - type: mushra
           id: test_12db_reverb
           name: Listening Test
-          content: Please listen to the reference. Then, grade each of the stimuli below by assessing how they compare to the reference. 
+          content: Please listen to the reference. Then, grade each of the stimuli below by comparing how clearly the speech can be heard.
           showWaveform: true
           enableLooping: true 
           reference: configs/resources/audio/12dB/Reverb/p286_389_0_rb.wav
           createAnchor35: true
-          createAnchor70: true
+          createAnchor70: false
           randomize: true
           showConditionNames: false
           stimuli: 
@@ -263,12 +263,12 @@ pages:
         - type: mushra
           id: test_15db_anechoic
           name: Listening Test
-          content: Please listen to the reference. Then, grade each of the stimuli below by assessing how they compare to the reference. 
+          content: Please listen to the reference. Then, grade each of the stimuli below by comparing how clearly the speech can be heard.
           showWaveform: true
           enableLooping: true 
           reference: configs/resources/audio/15dB/Anechoic/sp16_0_15dB.wav
           createAnchor35: true
-          createAnchor70: true
+          createAnchor70: false
           randomize: true
           showConditionNames: false
           stimuli: 
@@ -280,12 +280,12 @@ pages:
         - type: mushra
           id: test_15db_reverb
           name: Listening Test
-          content: Please listen to the reference. Then, grade each of the stimuli below by assessing how they compare to the reference. 
+          content: Please listen to the reference. Then, grade each of the stimuli below by comparing how clearly the speech can be heard.
           showWaveform: true
           enableLooping: true 
           reference: configs/resources/audio/15dB/Reverb/p287_180_0_rb.wav
           createAnchor35: true
-          createAnchor70: true
+          createAnchor70: false
           randomize: true
           showConditionNames: false
           stimuli: 

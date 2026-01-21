@@ -1,5 +1,5 @@
-testname: Speech Intelligibility Test
-testId: Test_Intelligible_1
+testname: Multichannel Speech Intelligibility Test
+testId: Test_Intelligible_Multichannel
 #bufferSize: 2048
 bufferSize: 512
 stopOnErrors: true
@@ -73,23 +73,23 @@ pages:
               GOMVDR: configs/resources/audio/m6dB/Anechoic/p278_297_1_mc_OMVDR.wav
               GFCIM: configs/resources/audio/m6dB/Anechoic/p278_297_1_mc_FCIM.wav
       -
-        - type: mushra
-          id: test_m6db_reverb
-          name: Listening Test
-          content: Please listen to the reference. Then, grade each of the stimuli below by assessing how they compare to the reference. 
-          showWaveform: true
-          enableLooping: true 
-          reference: configs/resources/audio/m6dB/Reverb/p278_326_0_mc_rb.wav
-          createAnchor35: true
-          createAnchor70: true
-          randomize: true
-          showConditionNames: false
-          stimuli: 
-              MBCCTN: NO RB FILE IN DATA
-              OMVDR: NO RB FILE IN DATA
-              GOMVDR: configs/resources/audio/m6dB/Reverb/p278_326_0_OMVDR_RB.wav
-              GFCIM: configs/resources/audio/m6dB/Reverb/p278_326_0_rb_mc_FCIM_RB.wav
-      -
+        # - type: mushra
+        #   id: test_m6db_reverb
+        #   name: Listening Test
+        #   content: Please listen to the reference. Then, grade each of the stimuli below by assessing how they compare to the reference. 
+        #   showWaveform: true
+        #   enableLooping: true 
+        #   reference: configs/resources/audio/m6dB/Reverb/p278_326_0_mc_rb.wav
+        #   createAnchor35: true
+        #   createAnchor70: true
+        #   randomize: true
+        #   showConditionNames: false
+        #   stimuli: 
+        #       MBCCTN: NO RB FILE IN DATA
+        #       OMVDR: NO RB FILE IN DATA
+        #       GOMVDR: configs/resources/audio/m6dB/Reverb/p278_326_0_OMVDR_RB.wav
+        #       GFCIM: configs/resources/audio/m6dB/Reverb/p278_326_0_rb_mc_FCIM_RB.wav
+      # -
         - type: mushra
           id: test_0db_anechoic
           name: Listening Test
@@ -164,16 +164,16 @@ pages:
           content: Please listen to the reference. Then, grade each of the stimuli below by assessing how they compare to the reference. 
           showWaveform: true
           enableLooping: true 
-          reference: configs/resources/audio/6dB/Anechoic/p286_101_1_6dB.wav
+          reference: configs/resources/audio/6dB/Anechoic/p286_398_1_mc.wav
           createAnchor35: true
           createAnchor70: true
           randomize: true
           showConditionNames: false
           stimuli: 
-              MBCCTN: configs/resources/audio/6dB/Anechoic/p286_101_1_MBCCTN_40E.wav
-              OMVDR: configs/resources/audio/6dB/Anechoic/p286_101_1_OMVDR.wav
-              GOMVDR: configs/resources/audio/6dB/Anechoic/p286_101_1_17M.wav
-              GFCIM: configs/resources/audio/6dB/Anechoic/p286_101_1_6dB_GFCIM.wav
+              MBCCTN: configs/resources/audio/6dB/Anechoic/p286_398_1_ISO.wav
+              OMVDR: configs/resources/audio/6dB/Anechoic/p286_398_1_omvdr.wav
+              GOMVDR: configs/resources/audio/6dB/Anechoic/p286_398_1_mc_OMVDR.wav
+              GFCIM: configs/resources/audio/6dB/Anechoic/p286_398_1_mc_FCIM.wav
       -
         - type: mushra
           id: test_6db_reverb
@@ -181,16 +181,16 @@ pages:
           content: Please listen to the reference. Then, grade each of the stimuli below by assessing how they compare to the reference. 
           showWaveform: true
           enableLooping: true 
-          reference: configs/resources/audio/6dB/Reverb/p282_330_0_rb.wav
+          reference: configs/resources/audio/6dB/Reverb/p286_443_1_mc_rb.wav
           createAnchor35: true
           createAnchor70: true
           randomize: true
           showConditionNames: false
           stimuli: 
-              MBCCTN: configs/resources/audio/6dB/Reverb/p282_330_0_MBCCTN_RVRB.wav
-              OMVDR: configs/resources/audio/6dB/Reverb/p282_330_0_OMVDR_RVRB.wav
-              GOMVDR: configs/resources/audio/6dB/Reverb/p282_330_0_17M_RVRB.wav
-              GFCIM: configs/resources/audio/6dB/Reverb/p282_330_0_rb_GFCIM.wav
+              MBCCTN: configs/resources/audio/6dB/Reverb/p286_443_1_ISO_RB.wav
+              OMVDR: configs/resources/audio/6dB/Reverb/p286_443_1_omvdr.wav
+              GOMVDR: configs/resources/audio/6dB/Reverb/p286_443_1_OMVDR_RB.wav
+              GFCIM: configs/resources/audio/6dB/Reverb/p286_443_1_rb_mc_FCIM_RB.wav
       -
         - type: mushra
           id: test_9db_anechoic
@@ -198,16 +198,16 @@ pages:
           content: Please listen to the reference. Then, grade each of the stimuli below by assessing how they compare to the reference. 
           showWaveform: true
           enableLooping: true 
-          reference: configs/resources/audio/9dB/Anechoic/p286_235_1_9dB.wav
+          reference: configs/resources/audio/9dB/Anechoic/p287_228_0_mc.wav
           createAnchor35: true
           createAnchor70: true
           randomize: true
           showConditionNames: false
           stimuli: 
-              MBCCTN: configs/resources/audio/9dB/Anechoic/p286_235_1_MBCCTN_40E.wav
-              OMVDR: configs/resources/audio/9dB/Anechoic/p286_235_1_OMVDR.wav
-              GOMVDR: configs/resources/audio/9dB/Anechoic/p286_235_1_17M.wav
-              GFCIM: configs/resources/audio/9dB/Anechoic/p286_235_1_9dB_GFCIM.wav
+              MBCCTN: configs/resources/audio/9dB/Anechoic/p287_228_0_ISO.wav
+              OMVDR: configs/resources/audio/9dB/Anechoic/p287_228_0_omvdr.wav
+              GOMVDR: configs/resources/audio/9dB/Anechoic/p287_228_0_mc_OMVDR.wav
+              GFCIM: configs/resources/audio/9dB/Anechoic/p287_228_0_mc_FCIM.wav
       -
         - type: mushra
           id: test_9db_reverb
@@ -215,16 +215,16 @@ pages:
           content: Please listen to the reference. Then, grade each of the stimuli below by assessing how they compare to the reference. 
           showWaveform: true
           enableLooping: true 
-          reference: configs/resources/audio/9dB/Reverb/p286_373_1_rb.wav
+          reference: configs/resources/audio/9dB/Reverb/p287_245_1_mc_rb.wav
           createAnchor35: true
           createAnchor70: true
           randomize: true
           showConditionNames: false
           stimuli: 
-              MBCCTN: configs/resources/audio/9dB/Reverb/p286_373_1_MBCCTN_RVRB.wav
-              OMVDR: configs/resources/audio/9dB/Reverb/p286_373_1_OMVDR_RVRB.wav
-              GOMVDR: configs/resources/audio/9dB/Reverb/p286_373_1_17M_RVRB.wav
-              GFCIM: configs/resources/audio/9dB/Reverb/p286_373_1_rb_GFCIM.wav
+              MBCCTN: configs/resources/audio/9dB/Reverb/p287_245_1_ISO_RB.wav
+              OMVDR: configs/resources/audio/9dB/Reverb/p287_245_1_omvdr_rb_5.wav
+              GOMVDR: configs/resources/audio/9dB/Reverb/p287_245_1_OMVDR_RB.wav
+              GFCIM: configs/resources/audio/9dB/Reverb/p287_245_1_rb_mc_FCIM_RB.wav
       -
         - type: mushra
           id: test_12db_anechoic
@@ -232,16 +232,16 @@ pages:
           content: Please listen to the reference. Then, grade each of the stimuli below by assessing how they compare to the reference. 
           showWaveform: true
           enableLooping: true 
-          reference: configs/resources/audio/12dB/Anechoic/p287_151_1_12dB.wav
+          reference: configs/resources/audio/12dB/Anechoic/p282_162_1_mc.wav
           createAnchor35: true
           createAnchor70: true
           randomize: true
           showConditionNames: false
           stimuli: 
-              MBCCTN: configs/resources/audio/12dB/Anechoic/p287_151_1_MBCCTN_40E.wav
-              OMVDR: configs/resources/audio/12dB/Anechoic/p287_151_1_OMVDR.wav
-              GOMVDR: configs/resources/audio/12dB/Anechoic/p287_151_1_17M.wav
-              GFCIM: configs/resources/audio/12dB/Anechoic/p287_151_1_12dB_GFCIM.wav
+              MBCCTN: configs/resources/audio/12dB/Anechoic/p282_162_1_ISO.wav
+              OMVDR: configs/resources/audio/12dB/Anechoic/p282_162_1_omvdr.wav
+              GOMVDR: configs/resources/audio/12dB/Anechoic/p282_162_1_mc_OMVDR.wav
+              GFCIM: configs/resources/audio/12dB/Anechoic/p282_162_1_mc_FCIM.wav
       -
         - type: mushra
           id: test_12db_reverb
@@ -249,16 +249,16 @@ pages:
           content: Please listen to the reference. Then, grade each of the stimuli below by assessing how they compare to the reference. 
           showWaveform: true
           enableLooping: true 
-          reference: configs/resources/audio/12dB/Reverb/p286_389_0_rb.wav
+          reference: configs/resources/audio/12dB/Reverb/p282_069_1_mc_rb.wav
           createAnchor35: true
           createAnchor70: true
           randomize: true
           showConditionNames: false
           stimuli: 
-              MBCCTN: configs/resources/audio/12dB/Reverb/p286_389_0_MBCCTN_RVRB.wav
-              OMVDR: configs/resources/audio/12dB/Reverb/p286_389_0_OMVDR_RVRB.wav
-              GOMVDR: configs/resources/audio/12dB/Reverb/p286_389_0_rb_GFCIM.wav
-              GFCIM: configs/resources/audio/12dB/Reverb/p286_389_0_17M_RVRB.wav
+              MBCCTN: configs/resources/audio/12dB/Reverb/p282_069_1_ISO_RB.wav
+              OMVDR: configs/resources/audio/12dB/Reverb/p282_069_1_omvdr.wav
+              GOMVDR: configs/resources/audio/12dB/Reverb/p282_069_1_OMVDR_RB.wav
+              GFCIM: configs/resources/audio/12dB/Reverb/p282_069_1_rb_mc_FCIM_RB.wav
       -
         - type: mushra
           id: test_15db_anechoic
@@ -266,16 +266,16 @@ pages:
           content: Please listen to the reference. Then, grade each of the stimuli below by assessing how they compare to the reference. 
           showWaveform: true
           enableLooping: true 
-          reference: configs/resources/audio/15dB/Anechoic/sp16_0_15dB.wav
+          reference: configs/resources/audio/15dB/Anechoic/p282_320_0_mc.wav
           createAnchor35: true
           createAnchor70: true
           randomize: true
           showConditionNames: false
           stimuli: 
-              MBCCTN: configs/resources/audio/15dB/Anechoic/sp16_0_MBCCTN_40E.wav
-              OMVDR: configs/resources/audio/15dB/Anechoic/sp16_0_OMVDR.wav
-              GOMVDR: configs/resources/audio/15dB/Anechoic/sp16_0_17M.wav
-              GFCIM: configs/resources/audio/15dB/Anechoic/sp16_0_15dB_GFCIM.wav
+              MBCCTN: configs/resources/audio/15dB/Anechoic/p282_320_0_ISO.wav
+              OMVDR: configs/resources/audio/15dB/Anechoic/p282_320_0_omvdr.wav
+              GOMVDR: configs/resources/audio/15dB/Anechoic/p282_320_0_mc_OMVDR.wav
+              GFCIM: configs/resources/audio/15dB/Anechoic/p282_320_0_mc_FCIM.wav
       -
         - type: mushra
           id: test_15db_reverb
@@ -283,16 +283,16 @@ pages:
           content: Please listen to the reference. Then, grade each of the stimuli below by assessing how they compare to the reference. 
           showWaveform: true
           enableLooping: true 
-          reference: configs/resources/audio/15dB/Reverb/p287_180_0_rb.wav
+          reference: configs/resources/audio/15dB/Reverb/p282_349_1_mc_rb.wav
           createAnchor35: true
           createAnchor70: true
           randomize: true
           showConditionNames: false
           stimuli: 
-              MBCCTN: configs/resources/audio/15dB/Reverb/p287_180_0_MBCCTN_RVRB.wav
-              OMVDR: configs/resources/audio/15dB/Reverb/p287_180_0_OMVDR_RVRB.wav
-              GOMVDR: configs/resources/audio/15dB/Reverb/p287_180_0_17M_RVRB.wav
-              GFCIM: configs/resources/audio/15dB/Reverb/p287_180_0_rb_GFCIM.wav
+              MBCCTN: configs/resources/audio/15dB/Reverb/p282_349_1_ISO_RB.wav
+              OMVDR: configs/resources/audio/15dB/Reverb/p282_349_1_omvdr.wav
+              GOMVDR: configs/resources/audio/15dB/Reverb/p282_349_1_OMVDR_RB.wav
+              GFCIM: configs/resources/audio/15dB/Reverb/p282_349_1_rb_mc_FCIM_RB.wav
 
     - type: finish
       name: Finish
