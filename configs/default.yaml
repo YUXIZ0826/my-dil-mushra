@@ -1,67 +1,164 @@
-testname: Binaural Speech Enhancement Listening Test
-testId: BCCTN
-bufferSize: 512
+# testname: Binaural Speech Enhancement Listening Test
+# testId: BCCTN
+# bufferSize: 512
+# stopOnErrors: true
+# showButtonPreviousPage: true
+# remoteService: service/write.php
+
+
+# pages:
+#     - type: generic
+#       id: first_page
+#       name: Binaural Speech Enhancement Listening Test
+#       content: The demos consist of Binaural signals and headphones are recommended for listening. The binaural signals are generated using measured HRIRs      
+#     - type: mushra
+#       id: trial1
+#       name: MUSHRA
+#       content: This training shows how to use our user interface. Please perform the underlined instructions to proceed with the training session. Reminder: In a MUSHRA listening test you are asked to rate the Basic Audio Quality (BAQ) of each condition.<br/>Basic Audio Quality is a single and global attribute that is used to judge any and all detected differences between the reference and the condition.
+#       showWaveform: true
+#       enableLooping: true 
+#       reference: configs/resources/audio/0dB/Anechoic/p279_393_1.wav
+#       createAnchor35: false
+#       createAnchor70: false
+#       stimuli:
+#           C1 : configs/resources/audio/0dB/Anechoic/p279_393_1_0dB.wav
+#           C2: configs/resources/audio/0dB/Anechoic/p279_393_1_17M.wav
+#           C3: configs/resources/audio/0dB/Anechoic/p279_393_1_SNR.wav
+#           C4: configs/resources/audio/0dB/Anechoic/p279_393_1_PL_SISNR.wav   
+
+#     - type: mushra
+#       id: trial2
+#       name: MUSHRA
+#       content: This training shows how to use our user interface. Please perform the underlined instructions to proceed with the training session. Reminder: In a MUSHRA listening test you are asked to rate the Basic Audio Quality (BAQ) of each condition.<br/>Basic Audio Quality is a single and global attribute that is used to judge any and all detected differences between the reference and the condition.
+#       showWaveform: true
+#       enableLooping: true 
+#       reference: configs/resources/audio/m6dB/Anechoic/p278_301_0.wav
+#       createAnchor35: false
+#       createAnchor70: false
+#       stimuli:
+#           C1 : configs/resources/audio/m6dB/Anechoic/p278_301_0_-6dB.wav
+#           C2: configs/resources/audio/m6dB/Anechoic/p278_301_0_17M.wav
+#           C3: configs/resources/audio/m6dB/Anechoic/p278_301_0_SNR.wav
+#           C4: configs/resources/audio/m6dB/Anechoic/p278_301_0_PL_SISNR.wav
+#     - type: finish
+#       name: Thank you
+#       content: Thank you for attending!
+#       showResults: true
+#       writeResults: true
+#       questionnaire:
+#           - type: text
+#             label: eMail
+#             name: email
+#           - type: number
+#             label: Age
+#             name: age
+#             min: 0
+#             max: 100
+#             default: 30
+#           - type: likert
+#             name: gender
+#             label: Gender
+#             response:
+#              - value: female
+#                label: Female
+#              - value: male
+#                label: Male
+#              - value: other
+#                label: Other
+
+testname: Dereverberation Listening Test
+testId: DIL_BLIND_TEST
+bufferSize: 2048
 stopOnErrors: true
 showButtonPreviousPage: true
 remoteService: service/write.php
 
-
 pages:
+    # ---------------- 介绍页 ----------------
     - type: generic
-      id: first_page
-      name: Binaural Speech Enhancement Listening Test
-      content: The demos consist of Binaural signals and headphones are recommended for listening. The binaural signals are generated using measured HRIRs      
+      id: intro
+      name: Instructions
+      content: |
+        <h3>Welcome!</h3>
+        <p>Please use headphones (请佩戴耳机).</p>
+        <p><b>Reference</b> is the clean speech (Perfect Quality).</p>
+        <p><b>Anchor</b> is the original reverberant speech (Low Quality).</p>
+        <p>Please rate the other samples based on how well the reverberation is removed.</p>
+
+    # ---------------- Trial 1: Female (803 -> 508) ----------------
     - type: mushra
       id: trial1
-      name: MUSHRA
-      content: This training shows how to use our user interface. Please perform the underlined instructions to proceed with the training session. Reminder: In a MUSHRA listening test you are asked to rate the Basic Audio Quality (BAQ) of each condition.<br/>Basic Audio Quality is a single and global attribute that is used to judge any and all detected differences between the reference and the condition.
+      name: "Trial 1 (Female / Room 508)"
+      content: "Please rate the dereverberation quality."
       showWaveform: true
-      enableLooping: true 
-      reference: configs/resources/audio/0dB/Anechoic/p279_393_1.wav
-      createAnchor35: false
-      createAnchor70: false
+      # 注意：这里匹配的是你截图里的 ieee02f05
+      reference: configs/resources/audio/trial1_h1_803_h2_508_female/ieee02f05.wav
+      anchors:
+          - configs/resources/audio/trial1_h1_803_h2_508_female/ieee02f05_reverb.wav
       stimuli:
-          C1 : configs/resources/audio/0dB/Anechoic/p279_393_1_0dB.wav
-          C2: configs/resources/audio/0dB/Anechoic/p279_393_1_17M.wav
-          C3: configs/resources/audio/0dB/Anechoic/p279_393_1_SNR.wav
-          C4: configs/resources/audio/0dB/Anechoic/p279_393_1_PL_SISNR.wav   
+          WPE:   configs/resources/audio/trial1_h1_803_h2_508_female/ieee02f05_wpe.wav
+          DFN:   configs/resources/audio/trial1_h1_803_h2_508_female/ieee02f05_dfn.wav
+          BUDDy: configs/resources/audio/trial1_h1_803_h2_508_female/ieee02f05_buddy.wav
+          DIL:   configs/resources/audio/trial1_h1_803_h2_508_female/ieee02f05_dil.wav
+          Reverb: configs/resources/audio/trial1_h1_803_h2_508_female/ieee02f05_reverb.wav
 
+    # ---------------- Trial 2: Male (803 -> 508) ----------------
     - type: mushra
       id: trial2
-      name: MUSHRA
-      content: This training shows how to use our user interface. Please perform the underlined instructions to proceed with the training session. Reminder: In a MUSHRA listening test you are asked to rate the Basic Audio Quality (BAQ) of each condition.<br/>Basic Audio Quality is a single and global attribute that is used to judge any and all detected differences between the reference and the condition.
+      name: "Trial 2 (Male / Room 508)"
+      content: "Please rate the dereverberation quality."
       showWaveform: true
-      enableLooping: true 
-      reference: configs/resources/audio/m6dB/Anechoic/p278_301_0.wav
-      createAnchor35: false
-      createAnchor70: false
+      # 截图显示文件是 ieee70m06
+      reference: configs/resources/audio/trial2_h1_803_h2_508_male/ieee70m06.wav
+      anchors:
+          - configs/resources/audio/trial2_h1_803_h2_508_male/ieee70m06_reverb.wav
       stimuli:
-          C1 : configs/resources/audio/m6dB/Anechoic/p278_301_0_-6dB.wav
-          C2: configs/resources/audio/m6dB/Anechoic/p278_301_0_17M.wav
-          C3: configs/resources/audio/m6dB/Anechoic/p278_301_0_SNR.wav
-          C4: configs/resources/audio/m6dB/Anechoic/p278_301_0_PL_SISNR.wav
+          WPE:   configs/resources/audio/trial2_h1_803_h2_508_male/ieee70m06_wpe.wav
+          DFN:   configs/resources/audio/trial2_h1_803_h2_508_male/ieee70m06_dfn.wav
+          BUDDy: configs/resources/audio/trial2_h1_803_h2_508_male/ieee70m06_buddy.wav
+          DIL:   configs/resources/audio/trial2_h1_803_h2_508_male/ieee70m06_dil.wav
+          Reverb: configs/resources/audio/trial2_h1_803_h2_508_male/ieee70m06_reverb.wav
+
+    # ---------------- Trial 3: Female (508 -> 803) ----------------
+    - type: mushra
+      id: trial3
+      name: "Trial 3 (Female / Room 803)"
+      content: "Please rate the dereverberation quality."
+      showWaveform: true
+      # 截图显示文件是 ieee03f03
+      reference: configs/resources/audio/trial3_h2_508_h1_803_female/ieee03f03.wav
+      anchors:
+          - configs/resources/audio/trial3_h2_508_h1_803_female/ieee03f03_reverb.wav
+      stimuli:
+          WPE:   configs/resources/audio/trial3_h2_508_h1_803_female/ieee03f03_wpe.wav
+          DFN:   configs/resources/audio/trial3_h2_508_h1_803_female/ieee03f03_dfn.wav
+          BUDDy: configs/resources/audio/trial3_h2_508_h1_803_female/ieee03f03_buddy.wav
+          DIL:   configs/resources/audio/trial3_h2_508_h1_803_female/ieee03f03_dil.wav
+          Reverb: configs/resources/audio/trial3_h2_508_h1_803_female/ieee03f03_reverb.wav
+
+    # ---------------- Trial 4: Male (508 -> 803) ----------------
+    - type: mushra
+      id: trial4
+      name: "Trial 4 (Male / Room 803)"
+      content: "Please rate the dereverberation quality."
+      showWaveform: true
+      # 截图显示文件是 ieee52m09
+      reference: configs/resources/audio/trial4_h2_508_h1_803_male/ieee52m09.wav
+      anchors:
+          - configs/resources/audio/trial4_h2_508_h1_803_male/ieee52m09_reverb.wav
+      stimuli:
+          WPE:   configs/resources/audio/trial4_h2_508_h1_803_male/ieee52m09_wpe.wav
+          DFN:   configs/resources/audio/trial4_h2_508_h1_803_male/ieee52m09_dfn.wav
+          BUDDy: configs/resources/audio/trial4_h2_508_h1_803_male/ieee52m09_buddy.wav
+          DIL:   configs/resources/audio/trial4_h2_508_h1_803_male/ieee52m09_dil.wav
+          Reverb: configs/resources/audio/trial4_h2_508_h1_803_male/ieee52m09_reverb.wav
+
+    # ---------------- 结束页 ----------------
     - type: finish
       name: Thank you
-      content: Thank you for attending!
-      showResults: true
+      content: "Please click 'Send Results', download the file, and send it back to me!"
       writeResults: true
       questionnaire:
           - type: text
-            label: eMail
-            name: email
-          - type: number
-            label: Age
-            name: age
-            min: 0
-            max: 100
-            default: 30
-          - type: likert
-            name: gender
-            label: Gender
-            response:
-             - value: female
-               label: Female
-             - value: male
-               label: Male
-             - value: other
-               label: Other
+            label: Your Name
+            name: username
