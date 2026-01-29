@@ -84,6 +84,7 @@ pages:
         <p><b>Reference</b> is the clean speech (Perfect Quality).</p>
         <p><b>Anchor</b> is the original reverberant speech (Low Quality).</p>
         <p>Please rate the other samples based on how well the reverberation is removed.</p>
+        <p>[Please focus on the suppression of the reverberation tail (echoes during pauses)] </p>
 
     # ---------------- Trial 1: Female (803 -> 508) ----------------
     - type: mushra
