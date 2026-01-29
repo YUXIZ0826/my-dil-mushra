@@ -71,7 +71,7 @@ testId: DIL_BLIND_TEST
 bufferSize: 2048
 stopOnErrors: true
 showButtonPreviousPage: true
-remoteService: service/write.php
+remoteService: ""
 
 pages:
     # ---------------- 介绍页 ----------------
