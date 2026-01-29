@@ -153,11 +153,24 @@ pages:
           DIL:   configs/resources/audio/trial4_h2_508_h1_803_male/ieee52m09_dil.wav
           Reverb: configs/resources/audio/trial4_h2_508_h1_803_male/ieee52m09_reverb.wav
 
-    # ---------------- 结束页 ----------------
+# ---------------- 结束页 (修正版) ----------------
     - type: finish
       name: Thank you
-      content: "Please click 'Send Results', download the file, and send it back to me!"
-      writeResults: true
+      # 1. 明确告诉受试者该做什么
+      content: |
+        <h3>Test Finished!</h3>
+        <p>Please click the button below.</p>
+        <p style="color: red; font-weight: bold;">IMPORTANT: If no file is downloaded, please TAKE A SCREENSHOT of the results below and send it to me!</p>
+      
+      # 2. 关键设置：让结果直接显示在网页上！
+      showResults: true
+      
+      # 3. 尝试开启本地保存 (部分版本支持这个开关)
+      enableDownload: true 
+      
+      # 4. 仍然尝试触发保存，但即使失败，上面的 showResults 也能保底
+      writeResults: true 
+      
       questionnaire:
           - type: text
             label: Your Name
