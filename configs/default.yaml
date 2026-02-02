@@ -101,6 +101,7 @@ pages:
           DFN:   configs/resources/audio/trial1_h1_803_h2_508_female/ieee02f05_dfn.wav
           BUDDy: configs/resources/audio/trial1_h1_803_h2_508_female/ieee02f05_buddy.wav
           DIL:   configs/resources/audio/trial1_h1_803_h2_508_female/ieee02f05_dil.wav
+          "DIL (Oracle)": configs/resources/audio/trial1_h1_803_h2_508_female/ieee02f05_dil_oracle.wav
           Reverb: configs/resources/audio/trial1_h1_803_h2_508_female/ieee02f05_reverb.wav
 
     # ---------------- Trial 2: Male (803 -> 508) ----------------
@@ -118,6 +119,7 @@ pages:
           DFN:   configs/resources/audio/trial2_h1_803_h2_508_male/ieee70m06_dfn.wav
           BUDDy: configs/resources/audio/trial2_h1_803_h2_508_male/ieee70m06_buddy.wav
           DIL:   configs/resources/audio/trial2_h1_803_h2_508_male/ieee70m06_dil.wav
+          "DIL (Oracle)": configs/resources/audio/trial2_h1_803_h2_508_male/ieee70m06_dil_oracle.wav
           Reverb: configs/resources/audio/trial2_h1_803_h2_508_male/ieee70m06_reverb.wav
 
     # ---------------- Trial 3: Female (508 -> 803) ----------------
@@ -135,6 +137,7 @@ pages:
           DFN:   configs/resources/audio/trial3_h2_508_h1_803_female/ieee03f03_dfn.wav
           BUDDy: configs/resources/audio/trial3_h2_508_h1_803_female/ieee03f03_buddy.wav
           DIL:   configs/resources/audio/trial3_h2_508_h1_803_female/ieee03f03_dil.wav
+          "DIL (Oracle)": configs/resources/audio/trial3_h2_508_h1_803_female/ieee03f03_dil_oracle.wav
           Reverb: configs/resources/audio/trial3_h2_508_h1_803_female/ieee03f03_reverb.wav
 
     # ---------------- Trial 4: Male (508 -> 803) ----------------
@@ -152,6 +155,7 @@ pages:
           DFN:   configs/resources/audio/trial4_h2_508_h1_803_male/ieee52m09_dfn.wav
           BUDDy: configs/resources/audio/trial4_h2_508_h1_803_male/ieee52m09_buddy.wav
           DIL:   configs/resources/audio/trial4_h2_508_h1_803_male/ieee52m09_dil.wav
+          "DIL (Oracle)": configs/resources/audio/trial4_h2_508_h1_803_male/ieee52m09_dil_oracle.wav
           Reverb: configs/resources/audio/trial4_h2_508_h1_803_male/ieee52m09_reverb.wav
 
 # ---------------- 结束页 (修正版) ----------------
